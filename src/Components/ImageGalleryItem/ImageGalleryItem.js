@@ -1,10 +1,13 @@
+import React from 'react';
 import './ImageGalleryItem.css';
 
-function ImageGalleryItem () {
+function ImageGalleryItem ({ id, url, name, openModal }) {
     return (
-        <li className="ImageGalleryItem">
-        <img src="{url}" alt="{name}" className="ImageGalleryItem-image" onClick={openModal}/>
+        <li className="ImageGalleryItem" key={id}>
+            <img src={url} alt={name} data-id={id} className="ImageGalleryItem-image" onClick={openModal}/>
         </li>
     );
 }
+
+export default ImageGalleryItem;
 

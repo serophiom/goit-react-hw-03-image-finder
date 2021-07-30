@@ -1,6 +1,5 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import './Searchbar.css'
-// import { ImSearch } from 'react-icons/im';
 
 export default class Searchbar extends Component {
     state = {
@@ -37,6 +36,7 @@ export default class Searchbar extends Component {
                 // autocomplete="off"
                 // autofocus
                 placeholder="Search images and photos"
+                value={this.state.imageName}
                 onChange={this.handleNameChange}
                 />
             </form>
@@ -44,4 +44,3 @@ export default class Searchbar extends Component {
         );
     }
 }
-
