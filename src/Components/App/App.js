@@ -6,6 +6,7 @@ import Button from '../Button/Button';
 import LoaderOfImages from '../Loader/Loader';
 import Modal from '../Modal/Modal';
 import './App.css';
+import { ToastContainer } from 'react-toastify';
 
 export default class App extends Component {
   state = {
@@ -81,6 +82,7 @@ export default class App extends Component {
       {modalWindow && (
         <Modal modalImage={modalImage} alt={alt} closeModal={this.modalSwith} />
       )}
+      <ToastContainer autoClose={3000} />
       </>
   );
   }
