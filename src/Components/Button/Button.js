@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Button.css';
 
 function Button ({ clickOnButton }) {
@@ -7,6 +8,10 @@ function Button ({ clickOnButton }) {
             Load more
         </button>
     );
+}
+
+Button.propTypes = {
+    clickOnButton: PropTypes.func.isRequired,
 }
 
 export default Button;
