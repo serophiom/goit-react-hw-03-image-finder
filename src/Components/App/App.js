@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Searchbar from '../Searchbar/Searchbar';
-import FetchSearch from '../FetchSearch/FetchSearch';
+import FetchSearch from '../../FetchSearch';
 import ImageGallery from '../ImageGallery/ImageGallery';
 import Button from '../Button/Button';
 import LoaderOfImages from '../Loader/Loader';
@@ -35,7 +35,7 @@ export default class App extends Component {
 
   handleAddImagesButton = () => {
     let nextPage = this.state.pageNumber + 1;
-    this.setState({ page: nextPage, isLoad: true });
+    this.setState({ pageNumber: nextPage, isLoad: true });
     FetchSearch(this.state.imageName, nextPage).then(response => {
       this.setState({
         images: [...this.state.images, ...response.hits], isLoad:false });
@@ -52,7 +52,7 @@ export default class App extends Component {
   }
 
   openModal = event => {
-    const idOfElement = +event.target.dataset.id;
+    const idOfElement = Number(event.target.dataset.id);
     const currentImage = this.state.images.filter((image) => {
       return image.id === idOfElement;
     });
